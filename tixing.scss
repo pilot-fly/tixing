@@ -1,0 +1,582 @@
+//颜色背景
+$map: (
+     'purple':-34px -571px,
+     'green':0px -571px,
+     'blue':-51px -571px,
+     'yellow':-85px -571px,
+     'brown':-133px -549px,
+     'red':-68px -571px,
+     'org':-102px -571px
+);
+$map2: (
+     'purple':0px -231px #C96FE1 -64px -401px -128px -401px 0px 0px,
+     'green':0px -256px #6EDC32 -74px -359px -136px -199px 0px -33px,
+     'blue':0px -281px #40ACF9 0px -433px -106px -359px 0px -66px,
+     'yellow':0px -306px #F2CC00 -32px -465px -128px -433px 0px -99px,
+     'brown':0px -331px #A0855E -32px -433px -136px -167px 0px -132px,
+     'red':0px -356px #F82469 -96px -433px -64px -433px 0px -165px,
+     'org':0px -381px #F89600 -136px -235px 0px -401px 0px -198px
+);
+$map3: (
+     'purple1':0px -231px #C96FE1,
+     'green1':0px -256px #6EDC32,
+     'blue1':0px -281px #40ACF9,
+     'yellow1':0px -306px #F2CC00,
+     'brown1':0px -331px #A0855E,
+     'red1':0px -356px #F82469,
+     'org1':0px -381px #F89600
+);
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+/*左*/
+.left{
+    width: 394px;
+    height:637px;
+    background: #383836;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .header{
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid #1A1A1A;
+        box-sizing: border-box;
+        padding: 0 15px;
+        line-height: 44px;
+        cursor: pointer;
+    }
+    .yi{
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid #2A2A28;
+        box-sizing: border-box;
+        margin-left: 5px;
+        font-size: 20px;
+        line-height: 44px;
+        color: #fff;
+        .clock{
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            background-image: url(img/packed-5.png);
+            background-position: 0px -359px;
+            vertical-align: middle;
+        }
+    }
+    .ge{
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid #2A2A28;
+        border-top: 1px solid #3E3E3C;
+        box-sizing: border-box; 
+        padding: 0 15px;
+        font-size: 20px;
+        line-height: 44px;
+        color: #fff;
+        position: relative;
+        .color{
+            width: 17px;
+            height: 17px;
+            background-image: url(img/packed-5.png);
+            background-position: -68px -571px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        @each $v in map_keys($map){
+            $l:map_get($map,$v);
+            .#{$v}{
+                width: 17px;
+                height: 17px;
+                background-image: url(img/packed-5.png);
+                background-position: nth($l,1) nth($l,2);
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+        .wifi{
+            width: 23px;
+            height: 23px;
+            display: inline-block;
+            position: absolute;
+            top:9px;
+            right: 29px;
+            background-image: url(img/packed-5.png);
+            background-position:-119px -497px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .wifi:hover{
+            background-position: 0px -526px;
+        }
+        .ge-input{
+            background: rgba(0,0,0,0);
+            border: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+    .ing{
+        background: #2D2D2B;
+    }
+}
+.icloud{
+    font-size: 20px;
+    color: #fff;
+    span{
+        color: #999999;
+    }
+    .yun{
+        color: #fff;
+    }
+    .xia{
+        display: inline-block;
+        width:11px;
+        height:7px;
+        background: url(img/packed-5.png);
+        background-position: -155px -647px;
+        font-size: 0;
+        vertical-align:middle;
+    }
+}
+.icloud:hover span{
+        color: #CFCFCF;
+        background-position: -145px -647px;
+    }
+    .icloud:hover .yun{
+        color: #fff;
+    }
+.add{
+    font-size:40px;
+    color: #999999;
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+.add:hover{
+        color: #CFCFCF;
+    }
+.yin{
+    width: 850px;
+    height: 332px;
+    box-sizing: border-box;
+    padding: 4px;
+    background: #fff;
+    border-radius:10px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    z-index: 33;
+    border:1px solid #E6E6E6;
+    display: none;
+}
+.san{
+    border-top: 0;
+    border-left: 15px solid rgba(0,0,0,0);
+    border-right: 15px solid rgba(0,0,0,0);
+    border-bottom: 15px solid #fff;
+    position: absolute;
+    top:37px;
+    left:100px;
+    z-index: 34;
+    display: none;
+}
+.yin-box{
+    width: 100%;
+    height: 324px;
+    box-sizing: border-box;
+    border:1px solid #E6E6E6;
+    border-radius: 5px;
+    padding: 35px;
+}
+.icon-box{
+    float: left;
+    width: 74px;
+    height: 107px;
+    text-align: center;
+    margin-right: 40px;
+    .icon{
+        width: 74px;
+        height: 74px;
+        border-radius: 30%;
+        box-sizing: border-box;
+        border:1px solid #CFCFCF;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .font{
+        font-size: 14px;
+        color: #666;
+        display: inline-block;
+        margin-top:12px;
+    }
+}
+.icon-box-wu{
+    margin-right: 0;
+}
+.icon-box2{
+    margin-top: 40px;
+}
+.wifi-yin{
+    position: absolute;
+    top:-40px;
+    left: 378px;
+    z-index: 33;
+    width: 394px;
+    height: 146px;
+    background: #fff;
+    box-sizing: border-box;
+    border:1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 4px;
+    display: none;
+}
+.wifi-xian{
+    display: block;
+}
+.wifi-yin-box{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border:1px solid #E0E0E0;
+    border-radius: 3px;
+    padding: 5px 20px;
+}
+.sanjiao1{
+    border-left: 0;
+    border-bottom: 15px solid rgba(0,0,0,0);
+    border-top: 15px solid rgba(0,0,0,0);
+    border-right: 15px solid #fff;
+    position: absolute;
+    top:48px;
+    left:-15px;
+    z-index: 34;
+}
+.text-box{
+    color: #333;
+    font-weight: 600;
+}
+.text-shu{
+    width: 343px;
+    height: 34px;
+    border:2px solid #4C99F2;
+    padding-left: 10px;
+    color: #999;
+    box-sizing: border-box;
+    margin-top: 0;
+    font-size: 14px;
+}
+.que{
+    color: #4C99F2;
+    font-size: 20px;
+    span{
+        float: right;
+        margin-left: 10px;
+    }
+    .que-wan{
+        font-weight: 600;
+    }
+}
+/*右*/
+.right{
+    width: 972px;
+    height: 637px;
+    background:url(img/b.png);
+    position: absolute;
+    top: 0;
+    right: 0;
+    .header{
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid #CFCFCF;
+        box-sizing: border-box;
+        padding: 0 15px;
+        position: relative;
+    }
+}
+   /*搜索框*/
+  .sou{
+      width: 480px;
+      height: 43px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 43px;
+  }
+   .sousuo{
+       width: 24px;
+       height: 24px;
+       background-image: url(img/packed-5.png);
+       background-position: -138px -359px;
+       background-repeat: no-repeat;
+       float: left;
+       margin-top: 10px;
+       margin-left: 15px;
+       
+   }
+   .shu{
+       padding: 0;
+       margin: 0;
+       border: 0;
+       height: 43px;
+       font-size: 18px;
+       color: #999;
+       background: rgba(0,0,0,0);
+   }
+   .name{
+       position: absolute;
+       right:15px;
+       top:10px;
+       color: #333333;
+       font-size:24px;
+       cursor: pointer;
+   }
+   .xia{
+       display: inline-block;
+        width: 11px;
+        height: 7px;
+        background: url(img/packed-5.png);
+        background-position: -155px -647px;
+        font-size: 0;
+        vertical-align: middle;
+   }
+   .wen{
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border:1px solid #CFCFCF;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 22px;
+        display: inline-block; 
+   }
+   .contion{
+       width:932px;
+       height: 62px;
+       border-bottom:1px solid #E0E0E0;
+       position: absolute;
+       top: 62px;
+       right: 0;
+       line-height: 62px;
+       @each $v in map_keys($map2){
+            $l:map_get($map2,$v);
+            .#{$v}{
+                color: nth($l,3);
+                font-size:40px;
+            }
+        }
+       .xuan{
+           width: 60px;
+           font-size:25px;
+           color: #FF2968;
+           position: absolute;
+           top: 10px;
+           right: 25px;
+           cursor: pointer;
+           @each $v in map_keys($map2){
+            $l:map_get($map2,$v);
+            .#{$v}{
+                color: nth($l,3);
+                font-size:25px;
+            }
+        }
+       }
+   }
+   #xiang{
+       position: absolute;
+       top:125px;
+       right: 0;
+   }
+   .wan{
+       width:882px;
+       height: 52px;      
+       border-bottom:1px solid #E0E0E0;
+       line-height: 52px;
+       font-size: 20px;
+       color: #999;
+       .wan-gai{
+           border: 0;
+           color: #999;
+           font-size: 20px;
+           background: rgba(0,0,0,0);
+       }
+   }
+   .zhong{
+           box-sizing: border-box;
+           border:1px solid red;
+       }
+// @each $c in map_keys($map2){
+//     $ls:map_get($map2,$v);
+//     $color:nth($ls,3);
+//     .zhong.#{$color}{
+//         box-sizing: border-box;
+//         border:1px solid $color;
+//     }
+// }
+   
+   @each $v in map_keys($map2){
+        $l:map_get($map2,$v);
+        .circle.#{$v}{
+           display: inline-block;
+           width: 32px;
+           height: 32px;
+           background: url(img/packed-5.png);
+           background-position:nth($l,4) nth($l,5);
+           vertical-align: middle;
+        }
+    }
+    @each $v in map_keys($map2){
+        $l:map_get($map2,$v);
+        .circle.piao_#{$v}{
+           display: inline-block;
+           width: 32px;
+           height: 32px;
+           background: url(img/packed-5.png);
+           background-position:nth($l,6) nth($l,7);
+           vertical-align: middle;
+        }
+    }
+   //隐藏选项框
+   .color-box{
+       float: left;
+       width: 33px;
+       height: 33px;
+       margin-right: 10px;
+       margin-top:18px;
+       text-align: center;
+       line-height: 33px;
+       position: relative;
+//     background-image: url(img/stylesheet-1.png);
+//     background-position: 0px -165px;
+//     background-repeat: no-repeat;
+   }
+   @each $v in map_keys($map2){
+        $l:map_get($map2,$v);
+        .colorb_#{$v}{
+           background-image: url(img/stylesheet-1.png);
+           background-position:nth($l,8) nth($l,9);
+           background-repeat: no-repeat;
+        }
+    }
+   .xuan-yin{
+       width: 363px;
+       height: 235px;
+       background: #fff;
+       box-sizing: border-box;
+       border:1px solid #E0E0E0;
+       position: absolute;
+       top: 10px;
+       right: 90px;
+       z-index: 34;
+       padding: 4px;
+       border-radius: 5px;
+       display: none;
+       .xuan-box{
+           width: 100%;
+           height: 100%;
+           box-sizing: border-box;
+           border:1px solid #E0E0E0;
+           border-radius: 3px;
+           padding: 15px;
+           .xuan-in{
+               width: 314px;
+               height: 43px;
+           }
+           h4{
+               margin-top: 25px;
+               color: #666;
+           }
+           
+           @each $v in map_keys($map2){
+            $l:map_get($map2,$v);
+            .#{$v}{
+                float: left;
+                width:25px;
+                height: 25px;
+                background-image: url(img/stylesheet-1.png);
+                background-position: nth($l,1) nth($l,2);
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+        #xuan-box-shu{
+               font-size:22px;
+               width: 314px;
+               height: 42px;
+               @each $v in map_keys($map2){
+                $l:map_get($map2,$v);
+                .#{$v}{
+                    color: nth($l,3);
+                    font-size: 25px;
+                    border: 1px solid #EEEEEE;
+                    margin: 0;
+                    box-sizing: border-box;
+                    padding-left: 10px;
+                    background: rgba(0,0,0,0);
+                }
+            }
+            .in{
+                width:314px;
+                height: 42px;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+            }
+           }
+        .wire{
+            width:351px;
+            height: 1px;
+            background: #E5E5E5;
+            position: absolute;
+            bottom: 60px;
+            left: 5px;
+        }
+        .dele{
+            color: #FF3B30;
+            font-size:16px;
+            position: absolute;
+            bottom:25px;
+            left: 20px;
+        }
+        .xuan-zi{
+            color: #0F81FF;
+            font-size:20px;
+            position: absolute;
+            bottom:25px;
+            right: 20px;
+            span{
+                margin-left: 15px;
+            }
+            .cheng{
+                font-weight: 600;
+            }
+        }
+       }
+   }
+   .sanjiao{
+           position: absolute;
+           left:361px;
+           top: 74px;
+           border-bottom: 15px solid rgba(0,0,0,0);
+           border-top: 15px solid rgba(0,0,0,0);
+           border-left: 15px solid #fff;
+           border-right:0;
+           width: 0;
+           height: 0;
+       }
